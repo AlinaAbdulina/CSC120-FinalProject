@@ -15,12 +15,12 @@ public class Customer {
 
     private String name;
     private String type; // karen, finalBoss, preformativeMale, financeBro, quietGuy
-    private Coffee desired;
+    private Coffee ordered;
 
-    public Customer(String name, String type, Coffee desired) {
+    public Customer(String name, String type, Coffee ordered) {
         this.name = name;
         this.type = type;
-        this.desired = desired;
+        this.ordered = ordered;
     }
 
     public String getName() {
@@ -31,8 +31,8 @@ public class Customer {
         return type;
     }
 
-    public Coffee getDesiredCoffee() {
-        return desired;
+    public Coffee getOrderedCoffee() {
+        return ordered;
     }
 
     public void react(boolean correct) {

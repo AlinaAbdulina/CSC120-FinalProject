@@ -5,7 +5,13 @@ public class Cafe {
     public static void main(String[] args) {
         // initialize introduction of game 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to --- Cafe!");
+        System.out.println("░░      ░░░░      ░░░        ░░        ░░░░░░░░░      ░░░░      ░░░        ░░        ░\r\n" + //
+                        "▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒▒\r\n" + //
+                        "▓  ▓▓▓▓▓▓▓▓  ▓▓▓▓  ▓▓      ▓▓▓▓      ▓▓▓▓▓▓▓▓▓▓  ▓▓▓▓▓▓▓▓  ▓▓▓▓  ▓▓      ▓▓▓▓      ▓▓▓\r\n" + //
+                        "█  ████  ██        ██  ████████  ██████████████  ████  ██        ██  ████████  ███████\r\n" + //
+                        "██      ███  ████  ██  ████████        █████████      ███  ████  ██  ████████        █\r\n" + //
+                        "                                                                                      ");
+        System.out.println("Welcome to Cafe Cafe!");
         System.out.println("We've been looking for a new hire!");
         System.out.println("You look like you have a lot of time on your hands.. Are you willing to take on the challenge of being our new barista?");
 
@@ -40,7 +46,7 @@ public class Cafe {
         Customer customer = new Customer(name, type, Customer.randomCoffee());
 
         System.out.println("\nA customer arrives: " + customer.getName() + " (" + customer.getType() + ")");
-        System.out.println("They ordered: " + customer.getDesiredCoffee());
+        System.out.println("They ordered: " + customer.getOrderedCoffee());
         System.out.println("Type the drink you serve or type 'auto' to serve a random drink:");
 
         String served = scanner.nextLine().trim();
@@ -49,9 +55,11 @@ public class Cafe {
             System.out.println("You served: " + served);
         }
 
-        boolean correct = served.equalsIgnoreCase(customer.getDesiredCoffee().getName());
+        boolean correct = served.equalsIgnoreCase(customer.getOrderedCoffee().getName());
         customer.react(correct);
 
         scanner.close();
+
+        // ADD A LOOP SYSTEM, ADD BARISTA, ADD INVENTORY, GRAPHICS? 
     }
-}
+}   
