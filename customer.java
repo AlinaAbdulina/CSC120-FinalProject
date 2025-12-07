@@ -84,7 +84,7 @@ public class Customer {
     }
 
     public static Coffee randomCoffee() {
-        String[] menu = { "Latte", "Mocha", "Black Coffee", "Cappuccino", "Tea", "Matcha" };
+        String[] menu = { "Americano", "Cappuccino", "Matcha", "Iced Latte", "Tea"};
         Random rand = new Random();
         return new Coffee(menu[rand.nextInt(menu.length)]);
     }
