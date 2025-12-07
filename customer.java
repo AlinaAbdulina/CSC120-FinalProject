@@ -6,18 +6,10 @@
 
 //karen throws coffee if wrong but huffs and puffs if its right
 
-//walk out of store 
-//customer cant pick up coffee until its ready
-
-//bariasta can quit
-
 import java.util.Random;
 
 /**
  * Represents a customer in the cafe game.
- * Each customer has a name, type of person, and a desired coffee.
- * Customers react differently depending on their type and whether the drink is
- * correct.
  */
 public class Customer {
 
@@ -43,12 +35,6 @@ public class Customer {
         return desired;
     }
 
-    /**
-     * Reacts to the coffee being served.
-     *
-     * @param correct true if the coffee served matches the desired coffee, false
-     *                otherwise
-     */
     public void react(boolean correct) {
         switch (type) {
             case "karen":
@@ -97,11 +83,6 @@ public class Customer {
         }
     }
 
-    /**
-     * Returns a random Coffee object for placeholder orders.
-     *
-     * @return a random Coffee
-     */
     public static Coffee randomCoffee() {
         String[] menu = { "Latte", "Mocha", "Black Coffee", "Cappuccino", "Tea", "Matcha" };
         Random rand = new Random();
