@@ -66,12 +66,12 @@ public class Cafe {
         String another = scanner.nextLine().trim();
         if (another.equalsIgnoreCase("no") ){
             cafeOpen = false;
-            System.out.println("Cafe is Closing! I quit");
+            System.out.println("Cafe is Closed for the day. Goodbye!");
             }
         }
 
         scanner.close();
 
-        // ADD A LOOP SYSTEM, ADD BARISTA, ADD INVENTORY, GRAPHICS? 
+        // ADD BARISTA, ADD INVENTORY, GRAPHICS? 
     }
 }   

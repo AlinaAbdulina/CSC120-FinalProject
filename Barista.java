@@ -7,7 +7,7 @@ public class Barista {
     // 2. "hi"
     // 3. "Hi, what can I get for you?"
 
-    // batista reaction to customer reactions?
+    // barista reaction to customer reactions?
     // *side eye*
     // *smile*
     // "You're welcome!"
