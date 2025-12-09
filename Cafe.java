@@ -62,12 +62,12 @@ public class Cafe {
         boolean correct = served.equalsIgnoreCase(customer.getOrderedCoffee().getName());
         customer.react(correct);
 
-        System.out.println("Serve another Cutsomer? (yes/no); //add quit
+        System.out.println("Serve another Cutsomer? (yes/no)"); //add quit
         String another = scanner.nextLine().trim();
-        if (another.equalsIgnoreCase("no")){
+        if (another.equalsIgnoreCase("no") ){
             cafeOpen = false;
-            System.out.println("Cafe is Closing! I quit")
-                }
+            System.out.println("Cafe is Closing! I quit");
+            }
         }
 
         scanner.close();
