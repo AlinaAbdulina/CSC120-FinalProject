@@ -41,6 +41,10 @@ public class Cafe {
         String[] names = {"Kai", "Timmy", "Taylor", "Judith", "Chad", "Trisha Paytas", "Seraphina", "Luna", "Dicky", "Miracle"};
         String[] types = {"quietGuy", "karen", "financeBro", "preformativeMale", "finalBoss"};
 
+        boolean cafeOpen = true;
+
+        while (cafeOpen){
+        
         String name = names[rand.nextInt(names.length)];
         String type = types[rand.nextInt(types.length)];
         Customer customer = new Customer(name, type, Customer.randomCoffee());
@@ -57,6 +61,14 @@ public class Cafe {
 
         boolean correct = served.equalsIgnoreCase(customer.getOrderedCoffee().getName());
         customer.react(correct);
+
+        System.out.println("Serve another Cutsomer? (yes/no); //add quit
+        String another = scanner.nextLine().trim();
+        if (another.equalsIgnoreCase("no")){
+            cafeOpen = false;
+            System.out.println("Cafe is Closing! I quit")
+                }
+        }
 
         scanner.close();
 
