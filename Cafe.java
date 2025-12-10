@@ -26,6 +26,14 @@ public class Cafe {
             System.exit(0);
         }
 
+        // Ask the player for their barista name
+        System.out.println("Please enter your name as the barista (or press Enter to use 'Barista'):");
+        String baristaName = scanner.nextLine().trim();
+        if (baristaName.isEmpty()) {
+            baristaName = "Barista";
+        }
+        Barista barista = new Barista(baristaName);
+
         System.out.println("\n" +
             "====================================================\n" +
             "                      -- MENU --\n" +
@@ -50,17 +58,38 @@ public class Cafe {
         Customer customer = new Customer(name, type, Customer.randomCoffee());
 
         System.out.println("\nA customer arrives: " + customer.getName() + " (" + customer.getType() + ")");
+        // barista greets the arriving customer
+        barista.greet(customer);
         System.out.println("They ordered: " + customer.getOrderedCoffee());
-        System.out.println("Type the drink you serve or type 'auto' to serve a random drink:");
+        System.out.println("Type the drink you serve (press Enter or type 'auto' to serve a random drink):");
 
-        String served = scanner.nextLine().trim();
-        if (served.equalsIgnoreCase("auto")) {
+        String servedInput = scanner.nextLine();
+        String served;
+        if (servedInput == null || servedInput.trim().isEmpty() || servedInput.trim().equalsIgnoreCase("auto")) {
             served = Customer.randomCoffee().getName();
             System.out.println("You served: " + served);
+        } else {
+            served = servedInput.trim();
         }
 
         boolean correct = served.equalsIgnoreCase(customer.getOrderedCoffee().getName());
         customer.react(correct);
+
+        // Let the player choose one of 8 barista reactions (not tied to correctness)
+        System.out.println();
+        System.out.println("Choose the barista's reaction to the customer's response:");
+        System.out.println("1) \"You're welcome!\" \n2) \"Have a great day!\" \n3) \"See you next time!\" \n4) \"I’m sorry about that\" \n5) \"Ugh, I'm so done with this job...\" \n6) No reaction \n7) Side-eye \n8) Smile");
+        String reactInput = scanner.nextLine().trim();
+        int reactChoice = 6; // default: no reaction
+        if (!reactInput.isEmpty()) {
+            try {
+                reactChoice = Integer.parseInt(reactInput);
+            } catch (NumberFormatException e) {
+                // keep default if parsing fails
+                reactChoice = 6;
+            }
+        }
+        barista.react(reactChoice, customer);
 
         System.out.println("Serve another Cutsomer? (yes/no)"); //add quit
         String another = scanner.nextLine().trim();
