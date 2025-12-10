@@ -90,6 +90,11 @@ public class Cafe {
             }
         }
         barista.react(reactChoice, customer);
+        // if player chose reaction 5 (barista quits), end the game immediately
+        if (reactChoice == 5) {
+            System.out.println("Cafe is closed forever...");
+            break;
+        }
 
         System.out.println("Serve another Cutsomer? (yes/no)"); //add quit
         String another = scanner.nextLine().trim();
@@ -100,7 +105,5 @@ public class Cafe {
         }
 
         scanner.close();
-
-        // ADD BARISTA, ADD INVENTORY, GRAPHICS? 
     }
 }   
