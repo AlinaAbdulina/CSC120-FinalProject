@@ -51,14 +51,14 @@ public class Customer {
 
             case "finalBoss":
                 if (correct) {
-                    System.out.println(name + " the aura in the cafe shifts suddenly: \"Good enough.\"");
+                    System.out.println(name + " growls and the aura in the cafe shifts suddenly: \"Good enough.\"");
                 } else {
                     System.out.println(name + "'s aura darkens, the lights in the cafe turns off, you hear something ticking...");
                     showImage("imgs/KARENWCOFFEE.jpg");
                     System.out.println("You messed with the wrong person...");
                      try {
-                        // pauses execution for 2 seconds
-                        Thread.sleep(5000); 
+                        // pauses execution for 3 seconds
+                        Thread.sleep(3000); 
                     } catch (InterruptedException e) {
                         // handle the case where the sleep is interrupted
                         Thread.currentThread().interrupt(); 
@@ -67,19 +67,38 @@ public class Customer {
                     System.out.println("Next time you won't make a silly mistake like this...");
                     showImage("imgs/KARENV2.jpg");
                     try {
-                        // pauses execution for 2 seconds
-                        Thread.sleep(5000); 
+                        // pauses execution for 3 seconds
+                        Thread.sleep(3000); 
                     } catch (InterruptedException e) {
-                        // handle the case where the sleep is interrupted
                         Thread.currentThread().interrupt(); 
                         System.err.println(" ");
                     }
-                    System.out.println("BOOM! The cafe is destroyed!");
+                    showImage("imgs/REDBUTTON.jpg");
+                    try {
+                        // pauses execution for 2 seconds
+                        Thread.sleep(2000); 
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt(); 
+                        System.err.println(" ");
+                    }
+                    System.out.println("            .-'''-.        .-'''-.                        ___   \r\n" + //
+                                                "           '   _    \\     '   _    \\                   .'/   \\  \r\n" + //
+                                                "/|       /   /` '.   \\  /   /` '.   \\  __  __   ___   / /     \\ \r\n" + //
+                                                "||      .   |     \\  ' .   |     \\  ' |  |/  `.'   `. | |     | \r\n" + //
+                                                "||      |   '      |  '|   '      |  '|   .-.  .-.   '| |     | \r\n" + //
+                                                "||  __  \\    \\     / / \\    \\     / / |  |  |  |  |  ||/`.   .' \r\n" + //
+                                                "||/'__ '.`.   ` ..' /   `.   ` ..' /  |  |  |  |  |  | `.|   |  \r\n" + //
+                                                "|:/`  '. '  '-...-'`       '-...-'`   |  |  |  |  |  |  ||___|  \r\n" + //
+                                                "||     | |                            |  |  |  |  |  |  |/___/  \r\n" + //
+                                                "||\\    / '                            |__|  |__|  |__|  .'.--.  \r\n" + //
+                                                "|/\\'..' /                                              | |    | \r\n" + //
+                                                "'  `'-'`                                               \\_\\    / \r\n" + //
+                                                "                                                        `''--'  ");
                     showImage("imgs/explode!!!.gif");
                     System.out.println("The cafe exploded... Better luck next time.");
                     System.out.println("");
                     try {
-                        // pauses execution for 2 seconds
+                        // pauses execution for 10 seconds
                         Thread.sleep(10000); 
                     } catch (InterruptedException e) {
                         // handle the case where the sleep is interrupted

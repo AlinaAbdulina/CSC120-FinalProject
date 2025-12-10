@@ -39,7 +39,7 @@ public class Cafe {
         // Minimal integration with Customer: spawn one random customer and handle a single serve
         Random rand = new Random();
         String[] names = {"Kai", "Timmy", "Taylor", "Judith", "Chad", "Trisha Paytas", "Seraphina", "Luna", "Dicky", "Miracle"};
-        String[] types = {"quietGuy", "karen", "financeBro", "preformativeMale", "finalBoss"};
+        String[] types = {"quietGuy", "karen", "financeBro", "performativeMale", "finalBoss"};
 
         boolean cafeOpen = true;
 
