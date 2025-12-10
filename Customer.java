@@ -145,8 +145,7 @@ public class Customer {
     }
 
     // Open a small Swing window to display an image. This runs on the EDT
-    // and returns only after the window is created so callers can continue
-    // (previously the program called System.exit immediately and killed the GUI).
+    // and returns only after the window is created so callers can continue.
     private void showImage(String path) {
         try {
             SwingUtilities.invokeAndWait(() -> {
