@@ -6,8 +6,12 @@
 
 //karen throws coffee if wrong but huffs and puffs if its right
 
+// This is to randomize customers.
 import java.util.Random;
 
+// This is for importing and displaying images GUI.
+import java.awt.*;
+import javax.swing.*;
 /**
  * Represents a customer in the cafe game.
  */
@@ -41,21 +45,52 @@ public class Customer {
                 if (correct) {
                     System.out.println(name + " reluctantly nods: \"Fine… this is correct.\"");
                 } else {
-                    System.out.println(name + " throws the drink at the barista! \"This is wrongggggg!\"");
+                    System.out.println(name + " throws the drink at the barista! \"This is WRONG! I am leaving a BAD review on YELP.\"");
                 }
                 break;
 
             case "finalBoss":
                 if (correct) {
-                    System.out.println(name + " smirks: \"Acceptable.\"");
+                    System.out.println(name + " the aura in the cafe shifts suddenly: \"Good enough.\"");
                 } else {
-                    System.out.println(name + " whispers hmmm...");
-                    System.out.println(" BOOM! The cafe is destroyed!");
+                    System.out.println(name + "'s aura darkens, the lights in the cafe turns off, you hear something ticking...");
+                    showImage("imgs/KARENWCOFFEE.jpg");
+                    System.out.println("You messed with the wrong person...");
+                     try {
+                        // pauses execution for 2 seconds
+                        Thread.sleep(5000); 
+                    } catch (InterruptedException e) {
+                        // handle the case where the sleep is interrupted
+                        Thread.currentThread().interrupt(); 
+                        System.err.println(" ");
+                    }
+                    System.out.println("Next time you won't make a silly mistake like this...");
+                    showImage("imgs/KARENV2.jpg");
+                    try {
+                        // pauses execution for 2 seconds
+                        Thread.sleep(5000); 
+                    } catch (InterruptedException e) {
+                        // handle the case where the sleep is interrupted
+                        Thread.currentThread().interrupt(); 
+                        System.err.println(" ");
+                    }
+                    System.out.println("BOOM! The cafe is destroyed!");
+                    showImage("imgs/explode!!!.gif");
+                    System.out.println("The cafe exploded... Better luck next time.");
+                    System.out.println("");
+                    try {
+                        // pauses execution for 2 seconds
+                        Thread.sleep(10000); 
+                    } catch (InterruptedException e) {
+                        // handle the case where the sleep is interrupted
+                        Thread.currentThread().interrupt(); 
+                        System.err.println(" ");
+                    }
                     System.exit(0);
                 }
                 break;
 
-            case "preformativeMale":
+            case "performativeMale":
                 if (correct) {
                     System.out.println(name + " sips: \"yum\"");
                 } else {
@@ -88,5 +123,29 @@ public class Customer {
         String[] menu = { "Americano", "Cappuccino", "Matcha", "Iced Latte", "Tea"};
         Random rand = new Random();
         return new Coffee(menu[rand.nextInt(menu.length)]);
+    }
+
+    // Open a small Swing window to display an image. This runs on the EDT
+    // and returns only after the window is created so callers can continue
+    // (previously the program called System.exit immediately and killed the GUI).
+    private void showImage(String path) {
+        try {
+            SwingUtilities.invokeAndWait(() -> {
+                ImageIcon icon = new ImageIcon(path);
+                if (icon.getIconWidth() <= 0) {
+                    System.out.println("Image not found or invalid: " + path);
+                    return;
+                }
+                JFrame f = new JFrame("Customer Reaction");
+                f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                JLabel lbl = new JLabel(icon);
+                f.getContentPane().add(lbl);
+                f.pack();
+                f.setLocationRelativeTo(null);
+                f.setVisible(true);
+            });
+        } catch (Exception ex) {
+            System.out.println("Could not display image: " + ex.getMessage());
+        }
     }
 }
