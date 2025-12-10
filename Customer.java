@@ -51,6 +51,7 @@ public class Customer {
                 } else {
                     System.out.println(name + " whispers hmmm...");
                     System.out.println(" BOOM! The cafe is destroyed!");
+                    System.exit(0);
                 }
                 break;
 
