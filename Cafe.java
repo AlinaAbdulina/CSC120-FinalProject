@@ -26,6 +26,14 @@ public class Cafe {
             System.exit(0);
         }
 
+        // Ask the player for their barista name
+        System.out.println("Please enter your name as the barista (or press Enter to use 'Barista'):");
+        String baristaName = scanner.nextLine().trim();
+        if (baristaName.isEmpty()) {
+            baristaName = "Barista";
+        }
+        Barista barista = new Barista(baristaName);
+
         System.out.println("\n" +
             "====================================================\n" +
             "                      -- MENU --\n" +
@@ -50,13 +58,18 @@ public class Cafe {
         Customer customer = new Customer(name, type, Customer.randomCoffee());
 
         System.out.println("\nA customer arrives: " + customer.getName() + " (" + customer.getType() + ")");
+        // barista greets the arriving customer
+        barista.greet(customer);
         System.out.println("They ordered: " + customer.getOrderedCoffee());
-        System.out.println("Type the drink you serve or type 'auto' to serve a random drink:");
+        System.out.println("Type the drink you serve (press Enter or type 'auto' to serve a random drink):");
 
-        String served = scanner.nextLine().trim();
-        if (served.equalsIgnoreCase("auto")) {
+        String servedInput = scanner.nextLine();
+        String served;
+        if (servedInput == null || servedInput.trim().isEmpty() || servedInput.trim().equalsIgnoreCase("auto")) {
             served = Customer.randomCoffee().getName();
             System.out.println("You served: " + served);
+        } else {
+            served = servedInput.trim();
         }
 
         boolean correct = served.equalsIgnoreCase(customer.getOrderedCoffee().getName());
