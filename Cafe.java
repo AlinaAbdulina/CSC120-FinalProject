@@ -96,7 +96,7 @@ public class Cafe {
             break;
         }
 
-        System.out.println("Serve another Cutsomer? (yes/no)"); //add quit
+        System.out.println("Serve another Customer? (yes/no)"); //add quit
         String another = scanner.nextLine().trim();
         if (another.equalsIgnoreCase("no") ){
             cafeOpen = false;
