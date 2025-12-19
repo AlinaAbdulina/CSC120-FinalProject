@@ -1,5 +1,5 @@
-import java.util.Scanner;
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  * The main class for the Cafe Cafe game.
@@ -10,7 +10,7 @@ import java.util.Random;
  * and barista reactions.
  */
 public class Cafe {
-
+    
     /**
      * The main method that starts the Cafe Cafe game.
      * <p>
@@ -58,7 +58,7 @@ public class Cafe {
             "                      -- MENU --\n" +
             "1. Americano    - $4.5\n" +
             "2. Cappuccino   - $3\n" +
-            "3. Matcha       - $25\n" +yes
+            "3. Matcha       - $25\n" + 
             "4. Iced Latte   - $5\n" +
             "5. Tea          - $4\n" +
             "====================================================\n");

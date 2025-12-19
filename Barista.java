@@ -4,7 +4,7 @@
  * by greeting them or reacting to situations.
  */
 public class Barista {
-    
+
     /** The name of the Barista. */
     private String name;
 
