@@ -111,9 +111,18 @@ public class Customer {
 
             case "performativeMale":
                 if (correct) {
-                    System.out.println(name + " sips: \"yum\"");
+                    showImage("imgs/PerformativeMaleV2.jpg");
+                    try {
+                        // pauses execution for 1 second
+                        Thread.sleep(1000); 
+                    } catch (InterruptedException e) {
+                        // handle the case where the sleep is interrupted
+                        Thread.currentThread().interrupt(); 
+                        System.err.println(" ");
+                    }
+                    System.out.println(name + " sips: \"hmph, not as good as Blank Street..\"");
                 } else {
-                    System.out.println(name + " sighs: \"yumm.\"");
+                    System.out.println(name + " sighs: \"yumm this taste very alternative y2k matcha labubu.\"");
                 }
                 break;
 
