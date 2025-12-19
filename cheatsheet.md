@@ -1,2 +1,8 @@
-There is no real cheat code in our game. The only hint I have is if you want to expreince the full game you need to give customers
-the wrong order.
+Welcome to Cafe Cafe!
+Cafe Cafe takes the following commands: 
+1. Your name at the beginning of the game.
+2. The drink served, `Enter` key, or "auto".
+3. A numerical value corresponding to a reaction.
+4. "yes" or "no".
+
+Cafe Cafe highly recommends you serve `finalBoss` incorrectly. Enjoy!
