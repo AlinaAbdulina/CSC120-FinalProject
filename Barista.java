@@ -1,12 +1,27 @@
+/**
+ * Represents a Barista in the Cafe game.
+ * Each Barista has a name and can interact with customers
+ * by greeting them or reacting to situations.
+ */
 public class Barista {
+
+    /** The name of the Barista. */
     private String name;
 
+ /**
+     * Constructs a new Barista with the given name.
+     *
+     * @param name the name of the Barista
+     */
     public Barista(String name) {
         this.name = name;
     }
 
     /**
      * Short greeting when a customer arrives.
+     * Prints a welcome message 
+     *
+     * @param customer the Customer being greeted
      */
     public void greet(Customer customer) {
         System.out.println(name + ": Welcome to Cafe Cafe, what can I get for you today?");
@@ -25,6 +40,8 @@ public class Barista {
      * 6) No reaction
      * 7) Side-eye
      * 8) Smile
+     * @param choice the number representing the chosen reaction (1-8)
+     * @param customer the Customer to whom the reaction is directed
      */
     public void react(int choice, Customer customer) {
         String cName = customer.getName();
