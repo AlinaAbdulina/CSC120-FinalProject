@@ -10,7 +10,7 @@ _yes____ 2 pts: Game has **multiple possible paths / outcomes** (i.e. gameplay d
 
 ___yes__ 1 pt: Since our game is different we decided that with every reaction a customer gives you can quit or have a unexpected reaction to a rude customer. ////Gameplay supports **reversible moves** where reasonable (e.g., if you pick up an object, you should be able to put it back down again later, possibly in a different place; if you go north then you should be able to return to the previous location by going south unless something has blocked your return path).
 
-___Yes__ 1 pt:(We use private access where for example only a barista can access the cutsomers name.) Some paths through the game have **restricted access** until the player has completed a task or acquired a specific item (i.e. a key to open a door, etc.).
+___yes__ 1 pt:(We use private access where for example only a barista can access the cutsomers name.) Some paths through the game have **restricted access** until the player has completed a task or acquired a specific item (i.e. a key to open a door, etc.).
 
 
 ## Back-End Design (10 pts)
