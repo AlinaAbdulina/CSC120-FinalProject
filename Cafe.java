@@ -1,7 +1,26 @@
 import java.util.Scanner;
 import java.util.Random;
 
+/**
+ * The main class for the Cafe Cafe game.
+ * <p>
+ * This class contains the game loop where a player is the barista,
+ * serves customers, and reacts to their responses
+ * introduction, barista creation, menu display, customer generation, order serving,
+ * and barista reactions.
+ */
 public class Cafe {
+
+    /**
+     * The main method that starts the Cafe Cafe game.
+     * <p>
+     * It initializes the game, prompts the player to accept the barista role,
+     * creates a Barista object, displays the menu, spawns random customers,
+     * processes orders, and handles barista reactions. The game loop continues
+     * until the player chooses to quit or the barista quits.
+     *
+     * @param args command-line arguments (not used)
+     */
     public static void main(String[] args) {
         // initialize introduction of game 
         Scanner scanner = new Scanner(System.in);
@@ -39,7 +58,7 @@ public class Cafe {
             "                      -- MENU --\n" +
             "1. Americano    - $4.5\n" +
             "2. Cappuccino   - $3\n" +
-            "3. Matcha       - $25\n" +
+            "3. Matcha       - $25\n" +yes
             "4. Iced Latte   - $5\n" +
             "5. Tea          - $4\n" +
             "====================================================\n");
@@ -78,7 +97,7 @@ public class Cafe {
         // Let the player choose one of 8 barista reactions (not tied to correctness)
         System.out.println();
         System.out.println("Choose the barista's reaction to the customer's response:");
-        System.out.println("1) \"You're welcome!\" \n2) \"Have a great day!\" \n3) \"See you next time!\" \n4) \"I’m sorry about that\" \n5) \"Ugh, I'm so done with this job...\" \n6) No reaction \n7) Side-eye \n8) Smile");
+        System.out.println("1) \"You're welcome!\" \n2) \"Have a great day!\" \n3) \"See you next time!\" \n4) \"I’m sorry about that\" \n5) \"Ugh, I'm so done with this job...I QUIETT\" \n6) No reaction \n7) Side-eye \n8) Smile");
         String reactInput = scanner.nextLine().trim();
         int reactChoice = 6; // default: no reaction
         if (!reactInput.isEmpty()) {

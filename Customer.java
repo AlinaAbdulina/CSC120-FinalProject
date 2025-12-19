@@ -1,44 +1,70 @@
-
-////customers reactions
-//customer comes in radnomly 
-
-//karen final boss complains no matter what and if her order is wrong she blows up the cofee shop.
-
-//karen throws coffee if wrong but huffs and puffs if its right
-
 // This is to randomize customers.
 import java.util.Random;
-
-// This is for importing and displaying images GUI.
-import java.awt.*;
 import javax.swing.*;
+
+
 /**
- * Represents a customer in the cafe game.
+ * Represents a customer in the Cafe game.
+ * <p>
+ * Each customer has a name, a type, and an ordered coffee. The customer can react
+ * differently depending on their type and whether they received the correct order.
  */
 public class Customer {
 
+    /** The name of the customer. */
     private String name;
-    private String type; // karen, finalBoss, preformativeMale, financeBro, quietGuy
+
+     /** The type of customer (e.g., karen, finalBoss, performativeMale, financeBro, quietGuy). */
+    private String type;
+
+    /** The coffee this customer has ordered. */
     private Coffee ordered;
 
+    /**
+     * Constructs a new Customer with the specified name, type, and their coffee order
+     *
+     * @param name the name of the customer
+     * @param type the type of customer
+     * @param ordered the coffee this customer has ordered
+     */
     public Customer(String name, String type, Coffee ordered) {
         this.name = name;
         this.type = type;
         this.ordered = ordered;
     }
 
+     /**
+     * Returns the customer's name.
+     *
+     * @return the customer's name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Returns the customer's type.
+     *
+     * @return the type of customer
+     */
     public String getType() {
         return type;
     }
 
+    /**
+     * Returns the coffee the customer ordered.
+     *
+     * @return the ordered Coffee object
+     */
     public Coffee getOrderedCoffee() {
         return ordered;
     }
 
+    /**
+     * Makes the customer react based on whether the order was correct.
+     *
+     * @param correct true if the customer received the correct coffee, false otherwise
+     */
     public void react(boolean correct) {
         switch (type) {
             case "karen":
@@ -138,14 +164,25 @@ public class Customer {
         }
     }
 
+     /**
+     * Returns a random Coffee object from the menu.
+     *
+     * @return a random Coffee
+     */
     public static Coffee randomCoffee() {
         String[] menu = { "Americano", "Cappuccino", "Matcha", "Iced Latte", "Tea"};
         Random rand = new Random();
         return new Coffee(menu[rand.nextInt(menu.length)]);
     }
 
-    // Open a small Swing window to display an image. This runs on the EDT
-    // and returns only after the window is created so callers can continue.
+    /**
+     * Open a small Swing window to display an image of customer reaction.
+     * <p>
+     * This method is private and runs on the Event Dispatch Thread (EDT). It pauses
+     * and returns only after the window is created so callers can continue.
+     *
+     * @param path the file path of the image to display
+     */
     private void showImage(String path) {
         try {
             SwingUtilities.invokeAndWait(() -> {
